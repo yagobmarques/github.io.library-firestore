@@ -1,0 +1,12 @@
+#caixa-login{
+    width: 500px;
+    height: 289px;
+    background-color: whitesmoke;
+}
+html{
+    background: black;
+}
+#principal{
+    background: black;
+    padding:50px;
+}

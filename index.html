@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<<<<<<< HEAD
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./js/main-index.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/style-index.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-analytics.js"></script>
+  <script>
+    // TODO: Replace the following with your app's Firebase project configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyD-cfHkxPpPEcuybOmkVYkDy9jafsBPtAo",
+      authDomain: "library-page.firebaseapp.com",
+      databaseURL: "https://library-page.firebaseio.com",
+      projectId: "library-page",
+      storageBucket: "library-page.appspot.com",
+      messagingSenderId: "451437543450",
+      appId: "1:451437543450:web:8eb243316120c59e3511a3",
+      measurementId: "G-S4SB8E6V44"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    const db = firebase.firestore();
+    //db.settings({timestampsInSnapshots: true})
+  </script>
+</head>
+
+<body>
+  <div id="principal">
+    <div id="caixa-login" class="container">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">If you enter an email that is not registered yet, you will
+            be creating a new one automatically!</small>
+=======
+    <title>Library</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    !-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.2.3/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.2.3/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+        <a class="navbar-brand" href="index.html">Library</a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#modalCadastro">Add</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showBooks()" data-toggle="modal" data-target="#modalBooks">View Titles</a>
+            </li>
+            <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="filter()" data-toggle="modal" data-target="#modalFilter">Filter Titles</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-fluid jumbotron text-center" id="cabecalho">
+        <h1><b>The Book Library</b></h1>
+        <p>Choose whether to view titles or add a new book.</p>
+    </div>
+    <div class="container-fluid">
+        <div>
+            <div class="row">
+                <div class="col text-center" text-center">
+                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modalCadastro">
+                        <h3>Add a Book</h3>
+                        <p>Enter the following book metadata: title, author, pages, and their status (read or unread) and press Add.</p>
+                    </button>
+                </div>
+                <div onclick="showBooks()" class="col text-center" text-center" data-toggle="modal"
+                    data-target="#modalBooks">
+                    <button type="button" class="btn btn-dark">
+                        <h3>View Titles</h3>
+                        <p>View the catalog and remove or read them. If the book is already read, the button will disable</p>
+                    </button>
+                </div>
+                <div onclick="filter()" class="col text-center"  data-toggle="modal"
+                data-target="#modalFilter">
+                <button type="button" class="btn btn-dark">
+                    <h3>Filter Titles</h3>
+                    <p>Filter books by their titles. Note, the filter only matches the book title.</p>
+                </button>
+            </div>
+            </div>
+>>>>>>> 842a46548e7907c9f1d725774e9b1b82e5121dfc
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="Password" placeholder="Password">
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">I agree with Yago</label>
+        </div>
+        <button type="button" onclick="inicializar_db()" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+<<<<<<< HEAD
+  </div>
+=======
+    <div class="modal fade" role="dialog" id="modalFilter" on>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Filter</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="dataFilter" onkeyup="filter()">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Pages</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablebody_filter">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+>>>>>>> 842a46548e7907c9f1d725774e9b1b82e5121dfc
+</body>
+
+</html>
